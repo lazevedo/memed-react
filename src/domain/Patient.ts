@@ -6,4 +6,6 @@ export interface Patient {
   peso?: number
   altura?: number
   idExterno: string
+  data_nascimento: string
+  cpf: string
 }
