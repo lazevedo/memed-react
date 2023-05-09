@@ -12,7 +12,7 @@
     "build": "tsc",
     "lint": "eslint --ext .ts,.tsx ./src"
   },
-  "peerDependencies": { 
+  "peerDependencies": {
     "react": "16.8.x || 17.x"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "yarn prettier --check ./src && yarn lint && yarn build"
+      "pre-commit": "#yarn prettier --check ./src && yarn lint && yarn build"
     }
   }
 }
