@@ -45,7 +45,7 @@ export default function MemedProvider(props: MemedContextProviderProps): React.R
 
   useSetupCommands({ options, prescriptionLoaded })
 
-  useActionButtonBind({ patientSet, actionRef })
+  useActionButtonBind({ patientSet, workplaceSet, actionRef })
 
   const onLogout = React.useCallback(() => {
     if (prescriptionLoaded) {
@@ -53,12 +53,18 @@ export default function MemedProvider(props: MemedContextProviderProps): React.R
     }
   }, [scriptId, prescriptionLoaded])
 
-  const loadingModule = React.useMemo(() => !prescriptionLoaded || !patientSet, [prescriptionLoaded, patientSet])
+  const loadingModule = React.useMemo(
+    () => (
+      !prescriptionLoaded || !patientSet || !workplaceSet,
+      [prescriptionLoaded, patientSet, workplaceSet]
+    )
+  )
 
   const contextValue = React.useMemo(
     () => ({
       setDoctorToken,
       setPatient,
+      setWorkplace,
       setActionRef,
       onLogout,
       loadingModule,
