@@ -23,7 +23,7 @@ export default function MemedProvider(props: MemedContextProviderProps): React.R
   const {
     children,
     color = '#00B8D6',
-    scriptSrc = 'https://integrations.memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js',
+    scriptSrc = 'https://memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js',
     scriptId = 'memedScript'
   } = props
 
